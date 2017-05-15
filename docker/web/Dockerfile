@@ -18,6 +18,8 @@ FROM ivre/base
 MAINTAINER Pierre LALET <pierre.lalet@cea.fr>
 
 # Install & configure Nginx
+RUN echo 'deb http://security.debian.org/ jessie/updates main contrib non-free' >> /etc/apt/sources.list
+RUN apt-get update
 RUN apt-get -qy install nginx spawn-fcgi php5-fpm php5-gd fcgiwrap
 ADD nginx-default-site /etc/nginx/sites-available/default
 RUN echo '\ndaemon off;' >> /etc/nginx/nginx.conf
