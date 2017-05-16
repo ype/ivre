@@ -50,5 +50,4 @@ RUN chown -Rh www-data:www-data var/www/dokuwiki/data var/www/dokuwiki/conf var/
 # Needed by Neo4j
 RUN mkdir /var/www/.neo4j && chown www-data:www-data /var/www/.neo4j
 
-EXPOSE 80
-CMD service php5-fpm start && service fcgiwrap start && exec /usr/sbin/nginx
+# CMD service php5-fpm start && service fcgiwrap start && exec /usr/sbin/nginx
